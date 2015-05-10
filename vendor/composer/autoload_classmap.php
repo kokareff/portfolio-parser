@@ -9,4 +9,7 @@ return array(
     'Curl\\CaseInsensitiveArray' => $vendorDir . '/php-curl-class/php-curl-class/src/Curl/Curl.php',
     'Curl\\Curl' => $vendorDir . '/php-curl-class/php-curl-class/src/Curl/Curl.php',
     'Curl\\MultiCurl' => $vendorDir . '/php-curl-class/php-curl-class/src/Curl/MultiCurl.php',
+    'Whoops\\Module' => $vendorDir . '/filp/whoops/src/deprecated/Zend/Module.php',
+    'Whoops\\Provider\\Zend\\ExceptionStrategy' => $vendorDir . '/filp/whoops/src/deprecated/Zend/ExceptionStrategy.php',
+    'Whoops\\Provider\\Zend\\RouteNotFoundStrategy' => $vendorDir . '/filp/whoops/src/deprecated/Zend/RouteNotFoundStrategy.php',
 );
