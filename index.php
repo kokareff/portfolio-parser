@@ -3,13 +3,14 @@
 require __DIR__ . "/vendor/autoload.php";
 
 use \Curl\Curl;
-use Sunra\PhpSimple\HtmlDomParser;
+use Symfony\Component\DomCrawler\Crawler;
 
 header("Content-type: text/plain");
 
 class PortfolioImport
 {
 	private $mainUrl, $innerCurl;
+	private $pageCache;
 
 	function __construct($url)
 	{
@@ -18,9 +19,19 @@ class PortfolioImport
 
 		if($response = $this->loadPage($url))
 		{
+			$pageCache[] = $response;
 			$links = $this->getPages($response);
 
-			var_dump($links);
+			if($links)
+			{
+				$dom = HtmlDomParser::str_get_html($links);
+				
+			}
+
+			foreach($links as $lnk)
+			{
+				HtmlDomParser::str_get_html($lnk);
+			}
 
 			$this->innerCurl->close();
 		}
@@ -44,11 +55,14 @@ class PortfolioImport
 	function getPages($pageContent)
 	{
 		$dom = HtmlDomParser::str_get_html($pageContent);
+		//print_r($dom->find(".text_box a"));
 
-		if($page_links = $dom->find(".pages_list .text_box a"))
+		if($page_links = $dom->find('.text_box a[href="*"]'))
 		{
-			$links = array_unshift($page_links, $this->mainUrl);
-			return $links;
+			return $page_links;
+			//var_dump($dom->find('.text_box a["href"]'));
+			//$links = array_unshift($page_links, $this->mainUrl);
+			//return $links;
 		}
 		else return false;
 	}

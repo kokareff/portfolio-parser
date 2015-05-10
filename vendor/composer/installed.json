@@ -118,29 +118,42 @@
         ]
     },
     {
-        "name": "sunra/php-simple-html-dom-parser",
-        "version": "v1.5.0",
-        "version_normalized": "1.5.0.0",
+        "name": "symfony/dom-crawler",
+        "version": "v2.6.6",
+        "version_normalized": "2.6.6.0",
+        "target-dir": "Symfony/Component/DomCrawler",
         "source": {
             "type": "git",
-            "url": "https://github.com/sunra/php-simple-html-dom-parser.git",
-            "reference": "a0b80ace086c7e09085669205e1b3c2c9c7a453c"
+            "url": "https://github.com/symfony/DomCrawler.git",
+            "reference": "8897ebf39c7dfb752a5494fa301845a3fbb9e53d"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/sunra/php-simple-html-dom-parser/zipball/a0b80ace086c7e09085669205e1b3c2c9c7a453c",
-            "reference": "a0b80ace086c7e09085669205e1b3c2c9c7a453c",
+            "url": "https://api.github.com/repos/symfony/DomCrawler/zipball/8897ebf39c7dfb752a5494fa301845a3fbb9e53d",
+            "reference": "8897ebf39c7dfb752a5494fa301845a3fbb9e53d",
             "shasum": ""
         },
         "require": {
-            "php": ">=5.3.2"
+            "php": ">=5.3.3"
         },
-        "time": "2013-05-04 14:32:03",
+        "require-dev": {
+            "symfony/css-selector": "~2.3",
+            "symfony/phpunit-bridge": "~2.7"
+        },
+        "suggest": {
+            "symfony/css-selector": ""
+        },
+        "time": "2015-03-30 15:54:10",
         "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "2.6-dev"
+            }
+        },
         "installation-source": "dist",
         "autoload": {
             "psr-0": {
-                "Sunra\\PhpSimple\\HtmlDomParser": "Src/"
+                "Symfony\\Component\\DomCrawler\\": ""
             }
         },
         "notification-url": "https://packagist.org/downloads/",
@@ -149,17 +162,15 @@
         ],
         "authors": [
             {
-                "name": "Sunra",
-                "email": "sunra@yandex.ru",
-                "homepage": "http://github.com/sunra"
+                "name": "Symfony Community",
+                "homepage": "http://symfony.com/contributors"
+            },
+            {
+                "name": "Fabien Potencier",
+                "email": "fabien@symfony.com"
             }
         ],
-        "description": "Composer adaptation of: A HTML DOM parser written in PHP5+ let you manipulate HTML in a very easy way! Require PHP 5+. Supports invalid HTML. Find tags on an HTML page with selectors just like jQuery. Extract contents from HTML in a single line.",
-        "homepage": "https://github.com/sunra/php-simple-html-dom-parser",
-        "keywords": [
-            "dom",
-            "html",
-            "parser"
-        ]
+        "description": "Symfony DomCrawler Component",
+        "homepage": "http://symfony.com"
     }
 ]
